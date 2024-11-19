@@ -1,0 +1,113 @@
+{
+    "_version": "1.65.0",
+    "sap.app": {
+        "id": "student402.com.sap.training.ux402.listdetail.ux402listdetail",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.15.5",
+            "toolsId": "3b781f6b-499a-4aa1-bb8a-7e1140ca92a1"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/here/goes/your/serviceurl/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.130.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "student402.com.sap.training.ux402.listdetail.ux402listdetail.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "transition": "slide",
+                "type": "View",
+                "viewType": "XML",
+                "path": "student402.com.sap.training.ux402.listdetail.ux402listdetail.view",
+                "async": true,
+                "viewPath": "student402.com.sap.training.ux402.listdetail.ux402listdetail.view"
+            },
+            "routes": [
+                {
+                    "name": "RouteList",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetList"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetList": {
+                    "id": "List",
+                    "name": "List"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "student402.com.sap.training.ux402.listdetail.ux402listdetail.view.App",
+            "type": "XML",
+            "id": "App"
+        }
+    }
+}

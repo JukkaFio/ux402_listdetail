@@ -1,0 +1,7 @@
+<mvc:View controllerName="student402.com.sap.training.ux402.listdetail.ux402listdetail.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="app">
+    </App>
+</mvc:View>
